@@ -105,11 +105,11 @@ public class AnkiStreamReader {
         }
     }
     
-    public func readAllNotesBatched(_ batchSize: Int64, callback: ([AnkiNote], Int64) -> ()) throws {
+    public func readAllNotesBatched(_ batchSize: Int64, callback: @escaping ([AnkiNote], Int64) async -> Void) async throws {
         while remainingNotes > 0 {
             let offset = notesRead
             let noteBatch = try readNotes(batchSize)
-            callback(noteBatch, offset)
+            await callback(noteBatch, offset)
         }
     }
     

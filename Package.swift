@@ -22,7 +22,7 @@ let package = Package(
         .target(
             name: "ApkgIO",
             dependencies: [
-                .product(name: "ZIPFoundation", package: "ZIPFoundation"), // 明确指定
+                .product(name: "ReadiumZIPFoundation", package: "ZIPFoundation"), // 明确指定
                 .product(name: "SQLite", package: "sqlite.swift"),
                 .product(name: "libzstd", package: "zstd"),
                 .product(name: "SwiftProtobuf", package: "swift-protobuf")

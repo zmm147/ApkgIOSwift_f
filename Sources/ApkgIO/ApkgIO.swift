@@ -779,8 +779,8 @@ public struct AnkiPackage {
     }
     
     
-    static func extractDb(_ fileUrl: URL, workDir: URL, fileManager: FileManager) throws -> (Connection, AnkiPackageFormat) {
-        try fileManager.unzipItem(at: fileUrl, to: workDir)
+    static func extractDb(_ fileUrl: URL, workDir: URL, fileManager: FileManager) async throws -> (Connection, AnkiPackageFormat) {
+        try await fileManager.unzipItem(at: fileUrl, to: workDir)
         
         guard let format = findPackageFormat(workDir) else {
             throw ApkgError.collectionDatabaseNotFound

@@ -796,7 +796,7 @@ public struct AnkiPackage {
         }
     }
     
-    public static func parse(_ fileUrl: URL) sysc throws -> AnkiPackage {
+    public static func parse(_ fileUrl: URL) async throws -> AnkiPackage {
         let fileManager = FileManager()
         let workDir = fileManager.temporaryDirectory.appendingPathComponent("apkg_contents")
         
@@ -824,7 +824,7 @@ public struct AnkiPackage {
                            mediaMapping: mediaMapping)
     }
     
-    public static func streamReader(_ fileUrl: URL) sysc throws -> AnkiStreamReader {
+    public static func streamReader(_ fileUrl: URL) async throws -> AnkiStreamReader {
         let fileManager = FileManager()
         let workDir = fileManager.temporaryDirectory.appendingPathComponent("apkg_contents")
         

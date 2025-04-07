@@ -1,5 +1,5 @@
 import Foundation
-import ZIPFoundation
+import ReadiumZIPFoundation
 import SQLite
 import libzstd
 
